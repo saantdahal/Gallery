@@ -33,6 +33,10 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: BlocBuilder<GalleryBloc, GalleryState>(
+        buildWhen: (previous, current) {
+          return previous.images != current.images ||
+              previous.status != current.status;
+        },
         builder: (context, state) {
           if (state.status == GalleryStatus.loading && state.images.isEmpty) {
             return Center(
@@ -104,10 +108,16 @@ class _FavouriteImageGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        final allImages = context.read<GalleryBloc>().state.images;
-        final index = allImages.indexWhere((img) => img.id == image.id);
+        // Get all favorite images instead of all images
+        final favoriteImages = context
+            .read<GalleryBloc>()
+            .state
+            .images
+            .where((img) => img.isFavorite)
+            .toList();
+        final index = favoriteImages.indexWhere((img) => img.id == image.id);
         context.push('/gallery/preview',
-            extra: {'images': allImages, 'initialIndex': index});
+            extra: {'images': favoriteImages, 'initialIndex': index});
       },
       child: Card(
         clipBehavior: Clip.antiAlias,
