@@ -292,10 +292,6 @@ flutter pub upgrade
    - Clean the build: `flutter clean`
    - Rebuild: `flutter pub get && flutter build apk --flavor production -t lib/main_prod.dart`
 
-## 📄 License
-
-This project is licensed under the terms specified in the LICENSE file.
-
 ## 👥 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
