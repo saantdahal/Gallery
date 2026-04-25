@@ -7,6 +7,7 @@ A Flutter-based gallery application with multi-flavor support for development an
 A cross-platform gallery application built with Flutter, featuring clean architecture, state management with BLoC, and local caching capabilities.
 
 ## 🛠️ Technologies Used
+
 ### Core Framework
 
 - **Flutter SDK**: ^3.5.2
@@ -278,12 +279,10 @@ flutter pub upgrade
 ### Common Issues
 
 1. **Missing Cupertino Icons**
-
    - Ensure `cupertino_icons` is in `pubspec.yaml`
    - Run `flutter pub get`
 
 2. **Build fails without flavor**
-
    - Always specify `--flavor` and `-t` when building
    - Use `development` or `production` flavor
 
