@@ -7,7 +7,6 @@ A Flutter-based gallery application with multi-flavor support for development an
 A cross-platform gallery application built with Flutter, featuring clean architecture, state management with BLoC, and local caching capabilities.
 
 ## 🛠️ Technologies Used
-
 ### Core Framework
 
 - **Flutter SDK**: ^3.5.2
